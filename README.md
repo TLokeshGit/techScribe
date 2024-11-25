@@ -99,3 +99,29 @@ To create an admin user, run the seed script:
 cd server
 npm run seed
 ```
+
+### Deployment on Render.com
+
+1. **Create a New Web Service:**
+
+   - Go to your Render.com dashboard.
+   - Click on "New" and select "Web Service".
+   - Connect your GitHub repository and select the `tech-scribe-mern-render` repository.
+
+2. **Configure the Web Service:**
+
+   - **Environment:** Select `Node`.
+   - **Build Command:** `cd server && npm install && cd ../client && npm install && npm run build`
+   - **Start Command:** `npm run start:prod`
+   - **Environment Variables:** Add the following environment variables:
+     - `NODE_ENV=production`
+     - `DATABASE_URI=your_mongodb_connection_string`
+     - `PORT=3500`
+     - `ACCESS_TOKEN_SECRET=your_access_token_secret`
+     - `REFRESH_TOKEN_SECRET=your_refresh_token_secret`
+     - `BASE_URL_PROD=https://techScribe-api.onrender.com`
+
+3. **Deploy:**
+
+   - Click "Create Web Service" to deploy your application.
+   - Wait for the deployment to complete and access your application at the provided URL.
