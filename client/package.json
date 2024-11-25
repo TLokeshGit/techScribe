@@ -18,7 +18,8 @@
     "react-spinners": "^0.13.4",
     "schema-utils": "^4.2.0",
     "webpack": "^5.96.1",
-    "webpack-dev-server": "^5.1.0"
+    "webpack-dev-server": "^5.1.0",
+    "express-async-errors": "^3.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
