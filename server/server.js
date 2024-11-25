@@ -1,3 +1,4 @@
+const expressAsyncErrors = require("express-async-errors");
 const path = require("path");
 require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
 require("express-async-errors");
@@ -34,12 +35,12 @@ app.use("/auth", require("./routes/authRoutes"));
 app.use("/users", require("./routes/userRoutes"));
 app.use("/notes", require("./routes/noteRoutes"));
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '../client/build')))
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../client/build")));
 
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, '../client', 'build', 'index.html'))
-    })
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"));
+  });
 }
 
 app.all("*", (req, res) => {
