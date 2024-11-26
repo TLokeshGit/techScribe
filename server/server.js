@@ -4,7 +4,6 @@ require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
 require("express-async-errors");
 const express = require("express");
 const app = express();
-// ...existing code...
 const { logger, logEvents } = require("./middleware/logger");
 const errorHandler = require("./middleware/errorHandler");
 const cookieParser = require("cookie-parser");
@@ -12,8 +11,6 @@ const cors = require("cors");
 const corsOptions = require("./config/corsOptions");
 const connectDB = require("./config/dbConn");
 const mongoose = require("mongoose");
-const verifyJWT = require("./middleware/verifyJWT");
-const seedUser = require("./seed");
 const PORT = process.env.PORT || 3500;
 
 console.log(process.env.NODE_ENV);
@@ -35,14 +32,6 @@ app.use("/auth", require("./routes/authRoutes"));
 app.use("/users", require("./routes/userRoutes"));
 app.use("/notes", require("./routes/noteRoutes"));
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../client/build")));
-
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"));
-  });
-}
-
 app.all("*", (req, res) => {
   res.status(404);
   if (req.accepts("html")) {
@@ -55,9 +44,6 @@ app.all("*", (req, res) => {
 });
 
 app.use(errorHandler);
-
-// Automatically seed admin user on server start
-// seedUser(); // Remove or comment out this line
 
 mongoose.connection.once("open", () => {
   console.log("Connected to MongoDB");

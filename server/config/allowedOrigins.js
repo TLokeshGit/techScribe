@@ -1,7 +1,7 @@
-require("dotenv").config();
-
 const allowedOrigins = [
-  process.env.BASE_URL_PROD, // Add your frontend origin here
-];
+    'http://localhost:3000',
+    'https://www.dandrepairshop.com',
+    'https://dandrepairshop.com'
+]
 
-module.exports = allowedOrigins;
+module.exports = allowedOrigins

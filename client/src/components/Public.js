@@ -4,18 +4,18 @@ const Public = () => {
     const content = (
         <section className="public">
             <header>
-                <h1>Welcome to <span className="nowrap">techScribe!</span></h1>
+                <h1>Welcome to <span className="nowrap">Dan D. Repairs!</span></h1>
             </header>
             <main className="public__main">
-                <p>Based in San Francisco, techScribe offers expert tech repair services with a dedicated and trained staff to meet all your technological needs efficiently.</p>
+                <p>Located in Beautiful Downtown Foo City, Dan D. Repairs  provides a trained staff ready to meet your tech repair needs.</p>
                 <address className="public__addr">
-                    Lokesh T<br />
-                    123 Parkmerced Drive<br />
-                    San Francisco, CA 94132<br />
+                    Dan D. Repairs<br />
+                    555 Foo Drive<br />
+                    Foo City, CA 12345<br />
                     <a href="tel:+15555555555">(555) 555-5555</a>
                 </address>
                 <br />
-                <p>Owner: Lokesh T</p>
+                <p>Owner: Dan Davidson</p>
             </main>
             <footer>
                 <Link to="/login">Employee Login</Link>
