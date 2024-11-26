@@ -20,6 +20,30 @@ Technotes is a full-stack application built with the MERN stack (MongoDB, Expres
 - **Authentication:** JWT, bcrypt
 - **Other:** dotenv, cors, cookie-parser
 
+## Description
+
+**Project Name:** techScribe-MERN-Render
+
+**Description:** A comprehensive full-stack application designed to manage notes (tickets) efficiently. Built using the MERN stack, it provides robust user authentication, role-based access control, and real-time updates. The application is responsive and suitable for both desktop and mobile use.
+
+**Key Features:**
+- User authentication with JWT
+- Role-based access control
+- CRUD operations for notes
+- Assigning notes to users
+- Real-time updates with React-Redux
+- Responsive design for desktop and mobile
+
+**Technologies Used:**
+- **Frontend:** React, Redux Toolkit, React Router, FontAwesome
+- **Backend:** Node.js, Express, Mongoose, MongoDB
+- **Authentication:** JWT, bcrypt
+- **Other:** dotenv, cors, cookie-parser
+
+**Deployment:** Deployed on Render.com
+
+**GitHub Repository:** [techScribe-MERN-Render](https://github.com/TLokeshGit/technotes)
+
 ## Instructions to Execute This Project
 
 ### Prerequisites
