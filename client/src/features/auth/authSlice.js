@@ -6,9 +6,11 @@ const authSlice = createSlice({
     reducers: {
         setCredentials: (state, action) => {
             const { accessToken } = action.payload
+        ///console.log("Storing token in state:", accessToken); // Debug log
             state.token = accessToken
+            // console.log("Current state token:", state.token); // Debug log
         },
-        logOut: (state, action) => {
+        logOut: (state) => {
             state.token = null
         },
     }
