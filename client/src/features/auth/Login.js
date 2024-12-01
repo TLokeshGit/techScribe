@@ -34,12 +34,15 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
+            console.log("Attempting login with:", { username, password }); // Debug log
             const { accessToken } = await login({ username, password }).unwrap()
+            console.log("Login successful, received token:", accessToken); // Debug log
             dispatch(setCredentials({ accessToken }))
             setUsername('')
             setPassword('')
             navigate('/dash')
         } catch (err) {
+            console.error("Login failed:", err); // Debug log
             if (!err.status) {
                 setErrMsg('No Server Response');
             } else if (err.status === 400) {
@@ -49,7 +52,9 @@ const Login = () => {
             } else {
                 setErrMsg(err.data?.message);
             }
-            errRef.current.focus();
+            if (errRef.current) {
+                errRef.current.focus();
+            }
         }
     }
 

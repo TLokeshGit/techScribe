@@ -1,16 +1,27 @@
-const expressAsyncErrors = require("express-async-errors");
-const path = require("path");
-require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
-require("express-async-errors");
-const express = require("express");
+import "express-async-errors";
+import path from "path";
+import dotenv from "dotenv";
+import express from "express";
+import { logger, logEvents } from "./middleware/logger.js";
+import errorHandler from "./middleware/errorHandler.js";
+import cookieParser from "cookie-parser";
+import cors from "cors";
+import corsOptions from "./config/corsOptions.js";
+import connectDB from "./config/dbConn.js";
+import mongoose from "mongoose";
+import { fileURLToPath } from "url";
+
+// Import routes
+import rootRoutes from "./routes/root.js";
+import authRoutes from "./routes/authRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
+import noteRoutes from "./routes/noteRoutes.js";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+dotenv.config({ path: path.resolve(__dirname, "../.env") });
+
 const app = express();
-const { logger, logEvents } = require("./middleware/logger");
-const errorHandler = require("./middleware/errorHandler");
-const cookieParser = require("cookie-parser");
-const cors = require("cors");
-const corsOptions = require("./config/corsOptions");
-const connectDB = require("./config/dbConn");
-const mongoose = require("mongoose");
 const PORT = process.env.PORT || 3500;
 
 console.log(process.env.NODE_ENV);
@@ -27,10 +38,11 @@ app.use(cookieParser());
 
 app.use("/", express.static(path.join(__dirname, "public")));
 
-app.use("/", require("./routes/root"));
-app.use("/auth", require("./routes/authRoutes"));
-app.use("/users", require("./routes/userRoutes"));
-app.use("/notes", require("./routes/noteRoutes"));
+// Use imported routes
+app.use("/", rootRoutes);
+app.use("/auth", authRoutes);
+app.use("/users", userRoutes);
+app.use("/notes", noteRoutes);
 
 app.all("*", (req, res) => {
   res.status(404);

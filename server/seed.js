@@ -1,8 +1,13 @@
-const path = require("path");
-require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
-const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
-const User = require("./models/User");
+import path from 'path';
+import dotenv from 'dotenv';
+import mongoose from 'mongoose';
+import bcrypt from 'bcrypt';
+import User from './models/User.js';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
 const seedUser = async () => {
   try {
