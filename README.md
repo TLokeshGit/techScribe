@@ -2,7 +2,7 @@
 
 ## About This Project
 
-Technotes is a full-stack application built with the MERN stack (MongoDB, Express, React, Node.js). It allows users to create, view, edit, and delete notes (tickets) assigned to different users. The application supports different user roles, including Employees, Managers, and Admins, each with varying levels of access and permissions.
+TechScribe is a full-stack application built with the MERN stack (MongoDB, Express, React, Node.js). It allows users to create, view, edit, and delete notes (tickets) assigned to different users. The application supports different user roles, including Employees, Managers, and Admins, each with varying levels of access and permissions.
 
 **Features:**
 
