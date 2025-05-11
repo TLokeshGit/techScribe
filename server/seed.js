@@ -1,13 +1,13 @@
-import path from 'path';
-import dotenv from 'dotenv';
-import mongoose from 'mongoose';
-import bcrypt from 'bcrypt';
-import User from './models/User.js';
-import { fileURLToPath } from 'url';
+import path from "path";
+import dotenv from "dotenv";
+import mongoose from "mongoose";
+import bcrypt from "bcrypt";
+import User from "./models/User.js";
+import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-dotenv.config({ path: path.resolve(__dirname, '../.env') });
+dotenv.config({ path: path.resolve(__dirname, "../.env") });
 
 const seedUser = async () => {
   try {
@@ -17,7 +17,7 @@ const seedUser = async () => {
     await mongoose.connect(process.env.DATABASE_URI);
 
     const username = "admin";
-    const password = "Admin@123"; // Change as needed
+    const password = "admin@123"; // Change as needed
     const roles = ["Admin"];
 
     // Delete existing user if exists
@@ -45,5 +45,4 @@ const seedUser = async () => {
   }
 };
 
-// Remove the automatic invocation to run manually
-// seedUser();
+seedUser();

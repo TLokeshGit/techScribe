@@ -1,131 +1,155 @@
-# techScribe-MERN-Render
+# 📝 techScribe – MERN Stack Notes App
 
-## About This Project
+## 🔍 About This Project
 
-TechScribe is a full-stack application built with the MERN stack (MongoDB, Express, React, Node.js). It allows users to create, view, edit, and delete notes (tickets) assigned to different users. The application supports different user roles, including Employees, Managers, and Admins, each with varying levels of access and permissions.
+**techScribe** is a full-stack notes management application built with the **MERN** stack (MongoDB, Express, React, Node.js). It enables users to securely create, view, edit, and delete notes, with role-based access for Admins, Managers, and Employees.
 
-**Features:**
+---
 
-- User authentication with JWT
-- Role-based access control
-- CRUD operations for notes
-- Assigning notes to users
-- Real-time updates with React-Redux
-- Responsive design for desktop and mobile
+## ✨ Features
 
-**Technologies Used:**
+- ✅ JWT-based Authentication
+- 🔐 Role-Based Access Control (RBAC)
+- 📝 Create, View, Edit, and Delete Notes
+- 👥 Assign Notes to Users
+- 🔄 Global State Management via Redux Toolkit
+- 📱 Fully Responsive Design (Mobile & Desktop)
 
-- **Frontend:** React, Redux Toolkit, React Router, FontAwesome
-- **Backend:** Node.js, Express, Mongoose, MongoDB
-- **Authentication:** JWT, bcrypt
-- **Other:** dotenv, cors, cookie-parser
+---
 
-**Deployment:** Deployed on Render.com
+## ⚙️ Tech Stack
 
-**GitHub Repository:** [techScribe-MERN-Render](https://github.com/TLokeshGit/technotes)
+| Layer          | Technologies                                    |
+| -------------- | ----------------------------------------------- |
+| **Frontend**   | React, Redux Toolkit, React Router, FontAwesome |
+| **Backend**    | Node.js, Express, Mongoose                      |
+| **Database**   | MongoDB (Atlas or Local)                        |
+| **Security**   | JWT, bcrypt, cookie-parser, cors                |
+| **Deployment** | Render.com                                      |
 
-## Instructions to Execute This Project
+---
 
-### Prerequisites
+## 🚀 Live Demo
 
-- **Node.js** (v14 or later)
-- **npm** or **yarn**
-- **MongoDB** (local installation or cloud-based, e.g., MongoDB Atlas)
+🔗 **[View Live Project](https://github.com/TLokeshGit/technotes)**  
+_(Replace with your actual deployed URL if available)_
 
-### Installation
+---
+
+## 🧰 Getting Started
+
+### 🔧 Prerequisites
+
+- Node.js (v14 or later)
+- npm (or yarn)
+- MongoDB (local or Atlas)
+
+---
+
+### 📥 Installation
 
 1. **Clone the Repository:**
 
    ```bash
    git clone https://github.com/TLokeshGit/technotes.git
-   ```
-
-2. **Navigate to the Project Directory:**
-
-   ```bash
    cd technotes
    ```
 
-3. **Install Server Dependencies:**
+2. **Install Server Dependencies:**
 
    ```bash
    cd server
    npm install
    ```
 
-4. **Install Client Dependencies:**
+3. **Install Client Dependencies:**
 
    ```bash
    cd ../client
    npm install
    ```
 
-### Configuration
+---
 
-1. **Set Up Environment Variables:**
+### ⚙️ Environment Configuration
 
-   - Rename `.env.example` to `.env` in the `server` directory.
-   - Update the `.env` file with your MongoDB URI and JWT secrets:
+1. Rename `.env.example` to `.env` inside the `server/` directory.
+2. Populate `.env` with:
 
-     ```properties
-     NODE_ENV=development
-     DATABASE_URI=your_mongodb_connection_string
-     PORT=3500
-     ACCESS_TOKEN_SECRET=your_access_token_secret
-     REFRESH_TOKEN_SECRET=your_refresh_token_secret
-     ```
+   ```env
+   NODE_ENV=development
+   PORT=3500
+   DATABASE_URI=your_mongodb_connection_string
+   ACCESS_TOKEN_SECRET=your_access_token_secret
+   REFRESH_TOKEN_SECRET=your_refresh_token_secret
+   ```
 
-### Running the Application
+---
 
-1. **Start the Server:**
+### 🏃 Running the Application Locally
+
+1. **Start Backend Server:**
 
    ```bash
    cd server
    npm run dev
    ```
 
-2. **Start the Client:**
+2. **Start React Frontend:**
 
    ```bash
    cd ../client
    npm start
    ```
 
-3. **Access the Application:**
+3. Open `http://localhost:3000` in your browser.
 
-   Open your browser and navigate to `http://localhost:3000`
+---
 
-### Seeding the Database
+### 🌱 Seeding the Database
 
-To create an admin user, run the seed script:
+To create an admin user:
 
 ```bash
 cd server
 npm run seed
 ```
 
-### Deployment on Render.com
+> Default credentials from `seed.js`:  
+> **Username**: `admin`  
+> **Password**: `Admin@123`
 
-1. **Create a New Web Service:**
+---
 
-   - Go to your Render.com dashboard.
-   - Click on "New" and select "Web Service".
-   - Connect your GitHub repository and select the `tech-scribe-mern-render` repository.
+## ☁️ Deployment on Render
 
-2. **Configure the Web Service:**
+### 🔧 Backend (Web Service)
 
-   - **Environment:** Select `Node`.
-   - **Build Command:** `cd server && npm install && cd ../client && npm install && npm run build`
-   - **Start Command:** `npm run start:prod`
-   - **Environment Variables:** Add the following environment variables:
-     - `NODE_ENV=production`
-     - `DATABASE_URI=your_mongodb_connection_string`
-     - `PORT=3500`
-     - `ACCESS_TOKEN_SECRET=your_access_token_secret`
-     - `REFRESH_TOKEN_SECRET=your_refresh_token_secret`
-     - `BASE_URL_PROD=https://techScribe-api.onrender.com`
+1. Go to [Render.com](https://render.com), click **"New" → "Web Service"**
+2. Select the GitHub repo and set **root directory** to `server/`
+3. Configure:
+   - **Build Command**: `npm install`
+   - **Start Command**: `npm run start:prod`
+4. Add Environment Variables:
+   - `NODE_ENV=production`
+   - `DATABASE_URI=your_mongodb_connection_string`
+   - `PORT=3500`
+   - `ACCESS_TOKEN_SECRET=your_access_token_secret`
+   - `REFRESH_TOKEN_SECRET=your_refresh_token_secret`
 
-3. **Deploy:**
+---
 
-   - Click "Create Web Service" to deploy your application.
-   - Wait for the deployment to complete and access your application at the provided URL.
+### 🌐 Frontend (Static Site)
+
+1. Go to **"New" → "Static Site"**
+2. Set root directory as `client/`
+3. Configure:
+   - **Build Command**: `npm run build`
+   - **Publish Directory**: `build`
+
+---
+
+## 🤝 License & Credits
+
+Built by **Lokesh T**  
+Feel free to fork, contribute, and deploy your own version!
