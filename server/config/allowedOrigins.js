@@ -1,6 +1,6 @@
 const allowedOrigins = [
-  "http://localhost:3000",
-  "https://techscribe-vvh5.onrender.com",
+  "https://techscribe-frontend.onrender.com", // ✅ your deployed frontend
+  "http://localhost:3000", // ✅ for local development
 ];
 
 export default allowedOrigins;
