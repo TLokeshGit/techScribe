@@ -31,10 +31,7 @@
 
 ## 🚀 Live Demo
 
-🔗 **[View Live Project](https://github.com/TLokeshGit/technotes)**  
-_(Replace with your actual deployed URL if available)_
-
----
+## 🔗 **[View Live Project](https://techscribe-frontend.onrender.com/)**
 
 ## 🧰 Getting Started
 
@@ -133,7 +130,6 @@ npm run seed
 4. Add Environment Variables:
    - `NODE_ENV=production`
    - `DATABASE_URI=your_mongodb_connection_string`
-   - `PORT=3500`
    - `ACCESS_TOKEN_SECRET=your_access_token_secret`
    - `REFRESH_TOKEN_SECRET=your_refresh_token_secret`
 
@@ -144,7 +140,7 @@ npm run seed
 1. Go to **"New" → "Static Site"**
 2. Set root directory as `client/`
 3. Configure:
-   - **Build Command**: `npm run build`
+   - **Build Command**: `npm install && npm run build`
    - **Publish Directory**: `build`
 
 ---
