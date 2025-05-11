@@ -51,7 +51,7 @@ _(Replace with your actual deployed URL if available)_
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/TLokeshGit/technotes.git
+   git clone https://github.com/TLokeshGit/techScribe.git
    cd technotes
    ```
 
